@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/tonutilisateur/k8s-gitops
+    repoURL: https://github.com/khawla253/k8s-gitops
     targetRevision: HEAD
     path: jenkins
     helm:
