@@ -1,0 +1,15 @@
+controller:
+  adminUser: admin
+  adminPassword: admin123
+  serviceType: NodePort
+  resources:
+    requests:
+      cpu: "300m"
+      memory: "512Mi"
+    limits:
+      cpu: "750m"
+      memory: "1Gi"
+persistence:
+  enabled: true
+  storageClass: "local-path"
+  size: 4Gi
