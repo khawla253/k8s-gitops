@@ -6,16 +6,17 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/khawla253/k8s-gitops
-    targetRevision: HEAD
-    path: jenkins
+    repoURL: https://charts.jenkins.io
+    chart: jenkins
+    targetRevision: 5.2.0 # ou latest version stable
     helm:
       valueFiles:
         - values.yaml
+    path: ""
   destination:
     server: https://kubernetes.default.svc
     namespace: jenkins
   syncPolicy:
     automated:
-      prune: true
       selfHeal: true
+      prune: true
