@@ -1,22 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jenkins
+  name: harbor
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://charts.jenkins.io
-    chart: jenkins
-    targetRevision: 5.2.0 # ou latest version stable
+    repoURL: https://github.com/khawla253/k8s-gitops
+    targetRevision: HEAD
+    path: harbor
     helm:
       valueFiles:
         - values.yaml
-    path: ""
   destination:
     server: https://kubernetes.default.svc
-    namespace: jenkins
+    namespace: harbor
   syncPolicy:
     automated:
-      selfHeal: true
       prune: true
+      selfHeal: true
